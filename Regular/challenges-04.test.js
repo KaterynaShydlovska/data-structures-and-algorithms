@@ -64,8 +64,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  let matchWord = /\boctober\boct/gi;
-  return matchWord.test(input); 
+  let matchWord = /^(October|Oct|october|oct)\b/g;
+  return matchWord.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
