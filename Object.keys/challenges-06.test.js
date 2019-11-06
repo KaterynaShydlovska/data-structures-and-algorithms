@@ -133,13 +133,20 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   let newArr = [];
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     newArr.push(arr[i].name);
-    if (arr[i].children !== []) {
-      newArr.concat(arr[i].children);
+    if (arr[i].children.length) {
+      newArr.push(arr[i].children);
+    }
+    if (arr[i].spouse !== null) {
+      newArr.push(arr[i].spouse);
     }
   }
-  return newArr.length;
+  let stringArray = newArr.toString();
+  let oneArray = stringArray.split(',')
+  let arrayLength = oneArray.length;
+  console.log(arrayLength)
+  return arrayLength;
 };
 
 /* ------------------------------------------------------------------------------------------------
