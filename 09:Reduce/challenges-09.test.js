@@ -88,10 +88,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // let arr = str.split('');
-  let reversed = str.reduse((newString, currentLetter) => {
+  let arr = str.split('');
+  let reversed = arr.reduse( (newString, currentLetter) => {
     return currentLetter + newString;
-  },[] )
+  }, '')
   return reversed;
 };
 
@@ -145,8 +145,28 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let numKids = arr.reduce(function (accumulator, value, idx) {
+    return arr.concat(value.clidren);
+  })
+  return arr.length;
 };
+
+/*  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i].name);
+    if (arr[i].children.length) {
+      newArr.push(arr[i].children);
+    }
+    if (arr[i].spouse !== null) {
+      newArr.push(arr[i].spouse);
+    }
+  }
+  let stringArray = newArr.toString();
+  let oneArray = stringArray.split(',')
+  let arrayLength = oneArray.length;
+  console.log(arrayLength)
+  return arrayLength;
+}; */
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -157,8 +177,9 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  return arr.reduce((a, b) => (a + b)) / arr.length;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -178,8 +199,16 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+  let prNum = [];
+  arr.reduce((value) => {
+    // let prNum = [];
+    if (value === isPrime) {
+      prNum.push(value);
+    }
+    return prNum.length;
+  });
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
