@@ -155,7 +155,6 @@ const characters = [
     house: 'Snow',
   },
 ];
-
 const getCharactersWithoutChildren = (arr) => {
   return arr.filter(person => person.children === undefined);
 };
