@@ -89,10 +89,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   let arr = str.split('');
-  let reversed = arr.reduse( (newString, currentLetter) => {
-    return currentLetter + newString;
-  }, '')
-  return reversed;
+  return arr.reduce((newString, currentLetter) => currentLetter + newString, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,28 +142,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  let numKids = arr.reduce(function (accumulator, value, idx) {
-    return arr.concat(value.clidren);
-  })
-  return arr.length;
+  return arr.reduce((accumulator, value) => {
+    if (value.children) {
+      return accumulator + value.children.length;
+    }
+    return accumulator;
+  }, 0)
 };
-
-/*  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(arr[i].name);
-    if (arr[i].children.length) {
-      newArr.push(arr[i].children);
-    }
-    if (arr[i].spouse !== null) {
-      newArr.push(arr[i].spouse);
-    }
-  }
-  let stringArray = newArr.toString();
-  let oneArray = stringArray.split(',')
-  let arrayLength = oneArray.length;
-  console.log(arrayLength)
-  return arrayLength;
-}; */
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -199,14 +181,12 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  let prNum = [];
-  arr.reduce((value) => {
-    // let prNum = [];
-    if (value === isPrime) {
-      prNum.push(value);
+  return arr.reduce((acc, cv) => {
+    if (isPrime(cv)) {
+      return acc + 1
     }
-    return prNum.length;
-  });
+    return acc;
+  }, 0);
 }
 
 
