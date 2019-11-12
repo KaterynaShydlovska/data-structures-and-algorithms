@@ -69,7 +69,6 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   let validation = /^(\d{1,2})?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g;
-    
   if (validation.test(phoneNumber)) {
     return true;
   } else {
