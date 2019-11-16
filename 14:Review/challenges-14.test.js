@@ -9,7 +9,9 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+  return arr.map((letter) => {
+    return letter.toUpperCase().charAt(0) + letter.slice(1)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +104,8 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  arr.sort((a, b) => a.price - b.price);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,7 +121,13 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  for (let i = 0; i < url.length; i++){
+    if (url.includes('https://')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
