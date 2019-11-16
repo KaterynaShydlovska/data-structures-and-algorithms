@@ -86,7 +86,13 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (parseInt(arr[i].mass) > parseInt(arr[0].mass)) {
+      newArr.push(arr[i].name);
+    }
+  }
+  return newArr.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,7 +110,7 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  arr.sort((a, b) => a.price - b.price);
+  arr.sort((a, b) => a.price - b.price || a.name.length - b.name.length);
   return arr;
 };
 
