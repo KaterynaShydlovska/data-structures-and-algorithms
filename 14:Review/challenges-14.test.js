@@ -86,7 +86,7 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  let newArr = [];
+  let newArr = []; 
   for (let i = 0; i < arr.length; i++) {
     if (parseInt(arr[i].mass) > parseInt(arr[0].mass)) {
       newArr.push(arr[i].name);
